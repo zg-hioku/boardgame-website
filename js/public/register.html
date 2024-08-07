@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Register</h2>
+        <form id="registerForm" action="register.php" method="post">
+            <label for="regUsername">Username</label>
+            <input type="text" id="regUsername" name="username" required>
+            <label for="regPassword">Password</label>
+            <input type="password" id="regPassword" name="password" required>
+            <button type="submit">Register</button>
+        </form>
+        <button id="loginButton">Login</button>
+    </div>
+    <div class="error">
+        <?php
+        // 显示错误信息
+        if (isset($_GET['error'])) {
+            echo htmlspecialchars($_GET['error']);
+        }
+        ?>
+    </div>
+    <script src="js/register.js"></script>
+</body>
+</html>
